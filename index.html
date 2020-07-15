@@ -1,0 +1,56 @@
+<!-- Keep all youtube urls stored in array, and play after a duration equal to that of the video selected -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+        <p class="browserText" style="font-size: 36px;">Youtube Lucky Search</p>
+        <p class="browserText" style="font-style: italic; margin-bottom: 2%; font-size: 24px;">It's Google's "I'm feeling Lucky" button, but mainly for songs on YouTube.</p>
+        <input type="text" name="q" class="box" id="songInput">
+        <br>
+        <a id="playfinal" onclick="return luckysearch();" href="" target="_blank">Let's Go!</a>
+    </div>
+
+    <div style="width: 560px; height: 315px; float: none; clear: both; margin: 2px auto;">
+        <embed id="player" src="" wmode="transparent" type="video/mp4" width="100%" height="100%" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Title here">
+    </div>
+    <script>
+        function luckysearch() {
+            // var str = " https://www.google.com/search?btnI=1&q=%s";
+            var str = "https://duckduckgo.com/?q=search&kp=-1&kl=us-en&kav=1";
+            var str1 = document.getElementById("songInput").value;
+            str1 = "\\" + str1 + "+youtube";
+            var temp = "";
+            var i = 0;
+            for (i = 0; i < str1.length; i++) {
+                x = str1.charAt(i);
+                if (x == ' ') {
+                    temp = temp + '+';
+                    continue;
+                }
+                temp = temp + x;
+            }
+            str1 = temp;
+            // console.log(str1);
+            // str = "https://www.google.com/search?btnI=1&q=" + str1;
+            str = "https://duckduckgo.com/?q=" + str1 + "&kp=-1&kl=us-en&kav=1&kn=1";
+            console.log(str);
+            var link = document.getElementById("playfinal");
+            // var link = document.getElementById("player");
+            // var link = document.getElementById("playform");
+            // link.action = str;
+            link.href = str;
+            console.log(link.href);
+        }
+    </script>
+</body>
+
+</html>

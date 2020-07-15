@@ -1,0 +1,44 @@
+.container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: solid 1px black; */
+    border: none;
+    height: 100%;
+    background-color: rgba(53, 52, 52, 0.815);
+}
+
+html,
+body {
+    height: 100%;
+    overflow-y: hidden;
+    background-color: rgba(53, 52, 52, 0.815);
+    font-family: Calibri Light;
+}
+
+#songInput {
+    height: 40px;
+    width: 800px;
+    margin-bottom: 2%;
+    font-size: 24px;
+    border-radius: 6px;
+    padding-left: 4px;
+}
+
+#playfinal {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(15, 127, 219, 0.979);
+    /* border: solid 1px black; */
+    height: 40px;
+    width: 120px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+}
+
+.browserText {
+    color: #fff;
+}
