@@ -8,9 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
+    <script>
+        function enterpress() {
+            var input = document.getElementById("songInput");
+            // Execute a function when the user releases a key on the keyboard
+            input.addEventListener("keyup", function(event) {
+                // Number 13 is the "Enter" key on the keyboard
+                console.log("Something happened");
+                if (event.keyCode === 13) {
+                    // Trigger the button element with a click
+                    document.getElementById("playfinal").click();
+                }
+            });
+        }
+    </script>
 </head>
 
-<body>
+<body onload="enterpress();">
     <div class="container">
         <p class="browserText" style="font-size: 36px;">Youtube Lucky Search</p>
         <p class="browserText" style="font-style: italic; margin-bottom: 2%; font-size: 24px;">It's Google's "I'm feeling Lucky" button, but mainly for songs on YouTube.</p>
@@ -44,6 +58,7 @@
             str = "https://duckduckgo.com/?q=" + str1 + "&kp=-1&kl=us-en&kav=1&kn=1";
             console.log(str);
             var link = document.getElementById("playfinal");
+            // Get the input field
             // var link = document.getElementById("player");
             // var link = document.getElementById("playform");
             // link.action = str;
