@@ -19,7 +19,7 @@ body {
 
 #songInput {
     height: 40px;
-    width: 800px;
+    width: 80%;
     margin-bottom: 2%;
     font-size: 24px;
     border-radius: 6px;
@@ -37,8 +37,15 @@ body {
     text-align: center;
     line-height: 40px;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .browserText {
     color: #fff;
+}
+
+@media only screen and (max-width: 730px) {
+    p {
+        font-size: 20px;
+    }
 }
