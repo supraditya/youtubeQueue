@@ -118,6 +118,9 @@ body {
 }
 .queuetop {
   display: table;
+  position: sticky;
+  background-color: rgba(53, 52, 52, 0.815);
+  top: 0;
   width: 100%;
 }
 #upnext {
@@ -132,4 +135,5 @@ body {
   border: none;
   border-radius: 6px;
   height: 35px;
+  cursor: pointer;
 }

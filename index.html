@@ -7,6 +7,8 @@ Using your example, a call to:
 
 http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=B4CRkpBGQzU&format=json -->
 
+<!-- Open and close new windows for every youtube video, might help with XSS problem too -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,7 +61,9 @@ http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=B4CRkpBGQzU&for
     </div>
     <br />
     <div class="queuecontainer">
-      <br />
+      <header
+        style="background-color: rgba(53, 52, 52, 0.815); height: 30px;"
+      ></header>
       <div class="queuetop">
         <div class="col1">
           <h1
