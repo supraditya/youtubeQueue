@@ -122,7 +122,7 @@ body {
   background-color: rgba(53, 52, 52, 0.815);
   top: 0;
   width: 100%;
-  padding: 1% 0 1% 0;
+  padding: 1% 2% 1% 2%;
 }
 #upnext {
   display: table-cell;
@@ -137,4 +137,12 @@ body {
   border-radius: 6px;
   height: 35px;
   cursor: pointer;
+}
+@media only screen and (max-width: 435px) {
+  #addqueue {
+    font-size: 16px;
+  }
+  #playfinal {
+    font-size: 16px;
+  }
 }
