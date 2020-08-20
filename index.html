@@ -9,64 +9,76 @@ http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=B4CRkpBGQzU&for
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Youtube Lucky Search</title>
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css" />
     <script>
-        function enterpress() {
-            var input = document.getElementById("songInput");
-            // Execute a function when the user releases a key on the keyboard
-            input.addEventListener("keyup", function(event) {
-                // Number 13 is the "Enter" key on the keyboard
-                if (event.keyCode === 13) {
-                    // Trigger the button element with a click
-                    document.getElementById("playfinal").click();
-                }
-            });
-        }
+      function enterpress() {
+        var input = document.getElementById("songInput");
+        // Execute a function when the user releases a key on the keyboard
+        input.addEventListener("keyup", function (event) {
+          // Number 13 is the "Enter" key on the keyboard
+          if (event.keyCode === 13) {
+            // Trigger the button element with a click
+            document.getElementById("playfinal").click();
+          }
+        });
+      }
     </script>
-</head>
+  </head>
 
-<body onload="enterpress();">
+  <body onload="enterpress();">
+    <br />
     <div class="container">
-        <p class="browserText" style="font-size: 36px;">Youtube Lucky Search</p>
-        <p class="browserText" style="font-style: italic; margin-bottom: 2%; font-size: 24px;">It's Google's "I'm feeling Lucky" button, but mainly for songs on YouTube.</p>
-        <input type="text" name="q" class="box" id="songInput">
-        <br>
-        <a id="playfinal" onclick="return luckysearch();" href="" target="_blank">Let's Go!</a>
+      <p class="browserText" style="font-size: 36px;">Youtube Lucky Search</p>
+      <!-- <p class="browserText" style="font-style: italic; margin-bottom: 2%; font-size: 24px;">It's Google's "I'm feeling Lucky" button, but mainly for songs on YouTube.</p> -->
+      <input
+        type="text"
+        placeholder="artist name-song name"
+        name="q"
+        class="box"
+        id="songInput"
+      />
+      <br />
+      <a id="playfinal" onclick="return luckysearch();" href="" target="_blank"
+        >Let's Go!</a
+      >
+    </div>
+    <br />
+    <div class="queuecontainer">
+      <p class="browserText">This is the queue container</p>
     </div>
     <script>
-        function luckysearch() {
-            // var str = "https://duckduckgo.com/?q=search&kp=-1&kl=us-en&kav=1";
-            var str1 = document.getElementById("songInput").value;
-            str1 = "\\" + str1 + "+youtube";
-            var temp = "";
-            var i = 0;
-            for (i = 0; i < str1.length; i++) {
-                x = str1.charAt(i);
-                if (x == ' ') {
-                    temp = temp + '+';
-                    continue;
-                }
-                temp = temp + x;
-            }
-            str1 = temp;
-            // console.log(str1);
-            // str = "https://www.google.com/search?btnI=1&q=" + str1;
-            var str = "https://duckduckgo.com/?q=" + str1 + "&kp=-1&kl=us-en&kav=1&kn=1";
-            console.log(str);
-            var link = document.getElementById("playfinal");
-            // Get the input field
-            // var link = document.getElementById("player");
-            // var link = document.getElementById("playform");
-            // link.action = str;
-            link.href = str;
-            console.log(link.href);
+      function luckysearch() {
+        // var str = "https://duckduckgo.com/?q=search&kp=-1&kl=us-en&kav=1";
+        var str1 = document.getElementById("songInput").value;
+        str1 = "\\" + str1 + "+youtube";
+        var temp = "";
+        var i = 0;
+        for (i = 0; i < str1.length; i++) {
+          x = str1.charAt(i);
+          if (x == " ") {
+            temp = temp + "+";
+            continue;
+          }
+          temp = temp + x;
         }
+        str1 = temp;
+        // console.log(str1);
+        // str = "https://www.google.com/search?btnI=1&q=" + str1;
+        var str =
+          "https://duckduckgo.com/?q=" + str1 + "&kp=-1&kl=us-en&kav=1&kn=1";
+        console.log(str);
+        var link = document.getElementById("playfinal");
+        // Get the input field
+        // var link = document.getElementById("player");
+        // var link = document.getElementById("playform");
+        // link.action = str;
+        link.href = str;
+        console.log(link.href);
+      }
     </script>
-</body>
-
+  </body>
 </html>
