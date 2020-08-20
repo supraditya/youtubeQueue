@@ -46,21 +46,71 @@ http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=B4CRkpBGQzU&for
         id="songInput"
       />
       <br />
-      <a id="playfinal" onclick="return luckysearch();" href="" target="_blank"
-        >Let's Go!</a
-      >
+      <div class="buttonContainer">
+        <a
+          id="playfinal"
+          onclick="return luckysearch();"
+          href=""
+          target="_blank"
+          >Search</a
+        >
+        <a id="addqueue" onclick="" href="" target="_blank">Add to Queue</a>
+      </div>
     </div>
     <br />
     <div class="queuecontainer">
-      <!-- <p class="browserText">This is the queue container</p> -->
       <br />
+      <div class="queuetop">
+        <div class="col1">
+          <h1
+            id="upnext"
+            class="browserText"
+            style="margin-left: 2.5%; width: 40%;"
+          >
+            Up Next...
+          </h1>
+        </div>
+
+        <div class="col2">
+          <button id="playqueue">
+            <span><i class="fa fa-play"></i></span> /
+            <span><i class="fa fa-pause"></i></span>
+          </button>
+        </div>
+      </div>
+      <br />
+      <!-- Start of queuecard element -->
       <div class="queuecard">
         <div class="col1">
           <h1 class="browserText">Search Term</h1>
           <p class="browserText">URL preview</p>
         </div>
         <div class="col2">
-          <button style="background-color: transparent; border: none;">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
+            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
+          </button>
+        </div>
+      </div>
+      <!-- End of queuecard element -->
+      <div class="queuecard">
+        <div class="col1">
+          <h1 class="browserText">Search Term</h1>
+          <p class="browserText">URL preview</p>
+        </div>
+        <div class="col2">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
             <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
           </button>
         </div>
@@ -71,7 +121,13 @@ http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=B4CRkpBGQzU&for
           <p class="browserText">URL preview</p>
         </div>
         <div class="col2">
-          <button style="background-color: transparent; border: none;">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
             <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
           </button>
         </div>
@@ -82,7 +138,13 @@ http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=B4CRkpBGQzU&for
           <p class="browserText">URL preview</p>
         </div>
         <div class="col2">
-          <button style="background-color: transparent; border: none;">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
             <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
           </button>
         </div>
@@ -93,40 +155,13 @@ http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=B4CRkpBGQzU&for
           <p class="browserText">URL preview</p>
         </div>
         <div class="col2">
-          <button style="background-color: transparent; border: none;">
-            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
-          </button>
-        </div>
-      </div>
-      <div class="queuecard">
-        <div class="col1">
-          <h1 class="browserText">Search Term</h1>
-          <p class="browserText">URL preview</p>
-        </div>
-        <div class="col2">
-          <button style="background-color: transparent; border: none;">
-            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
-          </button>
-        </div>
-      </div>
-      <div class="queuecard">
-        <div class="col1">
-          <h1 class="browserText">Search Term</h1>
-          <p class="browserText">URL preview</p>
-        </div>
-        <div class="col2">
-          <button style="background-color: transparent; border: none;">
-            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
-          </button>
-        </div>
-      </div>
-      <div class="queuecard">
-        <div class="col1">
-          <h1 class="browserText">Search Term</h1>
-          <p class="browserText">URL preview</p>
-        </div>
-        <div class="col2">
-          <button style="background-color: transparent; border: none;">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
             <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
           </button>
         </div>
