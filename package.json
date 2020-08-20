@@ -1,0 +1,23 @@
+{
+  "name": "youtube-playlist",
+  "version": "1.0.0",
+  "description": "An experimental youtube playlist creator without using the YouTube API. (Deployed at: https://supraditya.github.io/youtubeQueue)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supraditya/youtubeQueue.git"
+  },
+  "author": "supraditya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supraditya/youtubeQueue/issues"
+  },
+  "homepage": "https://github.com/supraditya/youtubeQueue#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}

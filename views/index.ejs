@@ -1,0 +1,205 @@
+<!-- Keep all youtube urls stored in array, and play after a duration equal to that of the video selected -->
+<!-- This returns metadata about a video:
+
+http://www.youtube.com/oembed?url={videoUrlHere}&format=json
+
+Using your example, a call to:
+
+http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=B4CRkpBGQzU&format=json -->
+
+<!-- Open and close new windows for every youtube video, might help with XSS problem too -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Lucky Search</title>
+    <link rel="stylesheet" href="../index.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script>
+      function enterpress() {
+        var input = document.getElementById("songInput");
+        // Execute a function when the user releases a key on the keyboard
+        input.addEventListener("keyup", function (event) {
+          // Number 13 is the "Enter" key on the keyboard
+          if (event.keyCode === 13) {
+            // Trigger the button element with a click
+            document.getElementById("playfinal").click();
+          }
+        });
+      }
+    </script>
+  </head>
+
+  <body onload="enterpress();">
+    <br />
+    <div class="container">
+      <p class="browserText" style="font-size: 36px;">Youtube Lucky Search</p>
+      <!-- <p class="browserText" style="font-style: italic; margin-bottom: 2%; font-size: 24px;">It's Google's "I'm feeling Lucky" button, but mainly for songs on YouTube.</p> -->
+      <input
+        type="text"
+        placeholder="artist name-song name"
+        name="q"
+        class="box"
+        id="songInput"
+      />
+      <br />
+      <div class="buttonContainer">
+        <a
+          id="playfinal"
+          onclick="return luckysearch();"
+          href=""
+          target="_blank"
+          >Search</a
+        >
+        <a id="addqueue" onclick="" href="" target="_blank">Add to Queue</a>
+      </div>
+    </div>
+    <br />
+    <div class="queuecontainer">
+      <header
+        style="background-color: rgba(53, 52, 52, 0.815); height: 30px;"
+      ></header>
+      <div class="queuetop">
+        <div class="col1">
+          <h1
+            id="upnext"
+            class="browserText"
+            style="margin-left: 2.5%; width: 40%;"
+          >
+            Up Next...
+          </h1>
+        </div>
+
+        <div class="col2">
+          <button id="playqueue">
+            <span><i class="fa fa-play"></i></span> /
+            <span><i class="fa fa-pause"></i></span>
+          </button>
+        </div>
+      </div>
+      <br />
+      <!-- Start of queuecard element -->
+      <div class="queuecard">
+        <div class="col1">
+          <h1 class="browserText">Search Term</h1>
+          <p class="browserText">URL preview</p>
+        </div>
+        <div class="col2">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
+            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
+          </button>
+        </div>
+      </div>
+      <!-- End of queuecard element -->
+      <div class="queuecard">
+        <div class="col1">
+          <h1 class="browserText">Search Term</h1>
+          <p class="browserText">URL preview</p>
+        </div>
+        <div class="col2">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
+            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="queuecard">
+        <div class="col1">
+          <h1 class="browserText">Search Term</h1>
+          <p class="browserText">URL preview</p>
+        </div>
+        <div class="col2">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
+            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="queuecard">
+        <div class="col1">
+          <h1 class="browserText">Search Term</h1>
+          <p class="browserText">URL preview</p>
+        </div>
+        <div class="col2">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
+            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="queuecard">
+        <div class="col1">
+          <h1 class="browserText">Search Term</h1>
+          <p class="browserText">URL preview</p>
+        </div>
+        <div class="col2">
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            "
+          >
+            <span class="closeSpan"><i class="fa fa-trash closeIcon"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function luckysearch() {
+        // var str = "https://duckduckgo.com/?q=search&kp=-1&kl=us-en&kav=1";
+        var str1 = document.getElementById("songInput").value;
+        str1 = "\\" + str1 + "+youtube";
+        var temp = "";
+        var i = 0;
+        for (i = 0; i < str1.length; i++) {
+          x = str1.charAt(i);
+          if (x == " ") {
+            temp = temp + "+";
+            continue;
+          }
+          temp = temp + x;
+        }
+        str1 = temp;
+        // console.log(str1);
+        // str = "https://www.google.com/search?btnI=1&q=" + str1;
+        var str =
+          "https://duckduckgo.com/?q=" + str1 + "&kp=-1&kl=us-en&kav=1&kn=1";
+        console.log(str);
+        var link = document.getElementById("playfinal");
+        // Get the input field
+        // var link = document.getElementById("player");
+        // var link = document.getElementById("playform");
+        // link.action = str;
+        link.href = str;
+        console.log(link.href);
+      }
+    </script>
+  </body>
+</html>
