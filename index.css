@@ -62,4 +62,34 @@ body {
   width: 95%;
   margin: auto;
   border-radius: 6px;
+  overflow-y: scroll;
+}
+.queuecard {
+  display: table;
+  border: solid 2px rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 2% !important;
+}
+.closeIcon {
+  color: red;
+  /* font-size: 36px; */
+  /* float: right; */
+}
+.closeSpan {
+  font-size: 32px;
+}
+.col1 {
+  display: table-cell;
+  padding: 0 2% 0 2%;
+  width: 78%;
+  /* border: solid 1px red; */
+}
+.col2 {
+  display: table-cell;
+  width: 20%;
+  text-align: center;
+  /* border: solid 1px blue; */
+  vertical-align: middle;
 }
