@@ -42,6 +42,7 @@ body {
 
 .browserText {
     color: #fff;
+    text-align: center;
 }
 
 @media only screen and (max-width: 730px) {
