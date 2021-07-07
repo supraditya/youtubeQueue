@@ -15,5 +15,5 @@ future.**
 
 ## To Run on LocalHost:
 
-- Open terminal, enter node server.js
+- Open terminal, enter `node server.js`
 - Go to http://localhost:8080/
